@@ -6,6 +6,7 @@ import { md3 } from 'vuetify/blueprints';
 
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
+  buildDir: 'target/.nuxt',
   devtools: { enabled: true },
   modules: ['@nuxtjs/i18n', 'vuetify-nuxt-module' ],
   nitro: {
@@ -14,8 +15,8 @@ export default defineNuxtConfig({
     }, 
     openAPI: {
       meta: {
-        title: 'My Awesome Project',
-        description: 'This might become the next big thing.',
+        title: 'App Ver',
+        description: 'Application versions.',
         version: packageJson.version
       }
     }

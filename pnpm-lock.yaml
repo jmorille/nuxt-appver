@@ -15,8 +15,8 @@ importers:
         specifier: 9.1.1
         version: 9.1.1(@vue/compiler-dom@3.5.13)(eslint@9.17.0(jiti@2.4.2))(magicast@0.3.5)(rollup@4.28.1)(typescript@5.7.2)(vue@3.5.13(typescript@5.7.2))
       '@vueuse/core':
-        specifier: ^12.0.0
-        version: 12.0.0(typescript@5.7.2)
+        specifier: 12.4.0
+        version: 12.4.0(typescript@5.7.2)
       nuxt:
         specifier: 3.14.1592
         version: 3.14.1592(@parcel/watcher@2.5.0)(@types/node@22.10.2)(db0@0.2.1)(eslint@9.17.0(jiti@2.4.2))(ioredis@5.4.2)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.28.1)(terser@5.37.0)(typescript@5.7.2)(vite@5.4.11(@types/node@22.10.2)(terser@5.37.0))
@@ -30,8 +30,8 @@ importers:
         specifier: 4.5.0
         version: 4.5.0(vue@3.5.13(typescript@5.7.2))
       vuetify:
-        specifier: 3.7.6
-        version: 3.7.6(typescript@5.7.2)(vite-plugin-vuetify@2.0.4)(vue@3.5.13(typescript@5.7.2))
+        specifier: 3.7.7
+        version: 3.7.7(typescript@5.7.2)(vite-plugin-vuetify@2.0.4)(vue@3.5.13(typescript@5.7.2))
       vuetify-nuxt-module:
         specifier: 0.18.3
         version: 0.18.3(magicast@0.3.5)(rollup@4.28.1)(typescript@5.7.2)(vite@5.4.11(@types/node@22.10.2)(terser@5.37.0))(vue@3.5.13(typescript@5.7.2))
@@ -715,6 +715,10 @@ packages:
     resolution: {integrity: sha512-8tR1xe7ZEbkabTuE/tNhzpolygUn9OaYp9yuYAF4MgDNZg06C3Qny80bes2/e9/Wm3aVkPUlCw6WgU7mQd0yEg==}
     engines: {node: '>= 16'}
 
+  '@intlify/shared@11.0.1':
+    resolution: {integrity: sha512-lH164+aDDptHZ3dBDbIhRa1dOPQUp+83iugpc+1upTOWCnwyC1PVis6rSWNMMJ8VQxvtHQB9JMib48K55y0PvQ==}
+    engines: {node: '>= 16'}
+
   '@intlify/unplugin-vue-i18n@6.0.1':
     resolution: {integrity: sha512-zDcGLNoaIP15JM4TGwgTHF01Y1Drwcv7pm9C2mHrGAZ3CugqyP2QEG0Vf82QVSNqgEwgB6prcAyDmjIDK1HlRQ==}
     engines: {node: '>= 18'}
@@ -895,36 +899,42 @@ packages:
     engines: {node: '>= 10.0.0'}
     cpu: [arm]
     os: [linux]
+    libc: [glibc]
 
   '@parcel/watcher-linux-arm-musl@2.5.0':
     resolution: {integrity: sha512-6uHywSIzz8+vi2lAzFeltnYbdHsDm3iIB57d4g5oaB9vKwjb6N6dRIgZMujw4nm5r6v9/BQH0noq6DzHrqr2pA==}
     engines: {node: '>= 10.0.0'}
     cpu: [arm]
     os: [linux]
+    libc: [musl]
 
   '@parcel/watcher-linux-arm64-glibc@2.5.0':
     resolution: {integrity: sha512-BfNjXwZKxBy4WibDb/LDCriWSKLz+jJRL3cM/DllnHH5QUyoiUNEp3GmL80ZqxeumoADfCCP19+qiYiC8gUBjA==}
     engines: {node: '>= 10.0.0'}
     cpu: [arm64]
     os: [linux]
+    libc: [glibc]
 
   '@parcel/watcher-linux-arm64-musl@2.5.0':
     resolution: {integrity: sha512-S1qARKOphxfiBEkwLUbHjCY9BWPdWnW9j7f7Hb2jPplu8UZ3nes7zpPOW9bkLbHRvWM0WDTsjdOTUgW0xLBN1Q==}
     engines: {node: '>= 10.0.0'}
     cpu: [arm64]
     os: [linux]
+    libc: [musl]
 
   '@parcel/watcher-linux-x64-glibc@2.5.0':
     resolution: {integrity: sha512-d9AOkusyXARkFD66S6zlGXyzx5RvY+chTP9Jp0ypSTC9d4lzyRs9ovGf/80VCxjKddcUvnsGwCHWuF2EoPgWjw==}
     engines: {node: '>= 10.0.0'}
     cpu: [x64]
     os: [linux]
+    libc: [glibc]
 
   '@parcel/watcher-linux-x64-musl@2.5.0':
     resolution: {integrity: sha512-iqOC+GoTDoFyk/VYSFHwjHhYrk8bljW6zOhPuhi5t9ulqiYq1togGJB5e3PwYVFFfeVgc6pbz3JdQyDoBszVaA==}
     engines: {node: '>= 10.0.0'}
     cpu: [x64]
     os: [linux]
+    libc: [musl]
 
   '@parcel/watcher-wasm@2.5.0':
     resolution: {integrity: sha512-Z4ouuR8Pfggk1EYYbTaIoxc+Yv4o7cGQnH0Xy8+pQ+HbiW+ZnwhcD2LPf/prfq1nIWpAxjOkQ8uSMFWMtBLiVQ==}
@@ -1086,51 +1096,61 @@ packages:
     resolution: {integrity: sha512-QAg11ZIt6mcmzpNE6JZBpKfJaKkqTm1A9+y9O+frdZJEuhQxiugM05gnCWiANHj4RmbgeVJpTdmKRmH/a+0QbA==}
     cpu: [arm]
     os: [linux]
+    libc: [glibc]
 
   '@rollup/rollup-linux-arm-musleabihf@4.28.1':
     resolution: {integrity: sha512-dRP9PEBfolq1dmMcFqbEPSd9VlRuVWEGSmbxVEfiq2cs2jlZAl0YNxFzAQS2OrQmsLBLAATDMb3Z6MFv5vOcXg==}
     cpu: [arm]
     os: [linux]
+    libc: [musl]
 
   '@rollup/rollup-linux-arm64-gnu@4.28.1':
     resolution: {integrity: sha512-uGr8khxO+CKT4XU8ZUH1TTEUtlktK6Kgtv0+6bIFSeiSlnGJHG1tSFSjm41uQ9sAO/5ULx9mWOz70jYLyv1QkA==}
     cpu: [arm64]
     os: [linux]
+    libc: [glibc]
 
   '@rollup/rollup-linux-arm64-musl@4.28.1':
     resolution: {integrity: sha512-QF54q8MYGAqMLrX2t7tNpi01nvq5RI59UBNx+3+37zoKX5KViPo/gk2QLhsuqok05sSCRluj0D00LzCwBikb0A==}
     cpu: [arm64]
     os: [linux]
+    libc: [musl]
 
   '@rollup/rollup-linux-loongarch64-gnu@4.28.1':
     resolution: {integrity: sha512-vPul4uodvWvLhRco2w0GcyZcdyBfpfDRgNKU+p35AWEbJ/HPs1tOUrkSueVbBS0RQHAf/A+nNtDpvw95PeVKOA==}
     cpu: [loong64]
     os: [linux]
+    libc: [glibc]
 
   '@rollup/rollup-linux-powerpc64le-gnu@4.28.1':
     resolution: {integrity: sha512-pTnTdBuC2+pt1Rmm2SV7JWRqzhYpEILML4PKODqLz+C7Ou2apEV52h19CR7es+u04KlqplggmN9sqZlekg3R1A==}
     cpu: [ppc64]
     os: [linux]
+    libc: [glibc]
 
   '@rollup/rollup-linux-riscv64-gnu@4.28.1':
     resolution: {integrity: sha512-vWXy1Nfg7TPBSuAncfInmAI/WZDd5vOklyLJDdIRKABcZWojNDY0NJwruY2AcnCLnRJKSaBgf/GiJfauu8cQZA==}
     cpu: [riscv64]
     os: [linux]
+    libc: [glibc]
 
   '@rollup/rollup-linux-s390x-gnu@4.28.1':
     resolution: {integrity: sha512-/yqC2Y53oZjb0yz8PVuGOQQNOTwxcizudunl/tFs1aLvObTclTwZ0JhXF2XcPT/zuaymemCDSuuUPXJJyqeDOg==}
     cpu: [s390x]
     os: [linux]
+    libc: [glibc]
 
   '@rollup/rollup-linux-x64-gnu@4.28.1':
     resolution: {integrity: sha512-fzgeABz7rrAlKYB0y2kSEiURrI0691CSL0+KXwKwhxvj92VULEDQLpBYLHpF49MSiPG4sq5CK3qHMnb9tlCjBw==}
     cpu: [x64]
     os: [linux]
+    libc: [glibc]
 
   '@rollup/rollup-linux-x64-musl@4.28.1':
     resolution: {integrity: sha512-xQTDVzSGiMlSshpJCtudbWyRfLaNiVPXt1WgdWTwWz9n0U12cI2ZVtWe/Jgwyv/6wjL7b66uu61Vg0POWVfz4g==}
     cpu: [x64]
     os: [linux]
+    libc: [musl]
 
   '@rollup/rollup-win32-arm64-msvc@4.28.1':
     resolution: {integrity: sha512-wSXmDRVupJstFP7elGMgv+2HqXelQhuNf+IS4V+nUpNVi/GUiBgDmfwD0UGN3pcAnWsgKG3I52wMOBnk1VHr/A==}
@@ -1307,14 +1327,14 @@ packages:
       vue: ^3.0.0
       vuetify: ^3.0.0
 
-  '@vueuse/core@12.0.0':
-    resolution: {integrity: sha512-C12RukhXiJCbx4MGhjmd/gH52TjJsc3G0E0kQj/kb19H3Nt6n1CA4DRWuTdWWcaFRdlTe0npWDS942mvacvNBw==}
+  '@vueuse/core@12.4.0':
+    resolution: {integrity: sha512-XnjQYcJwCsyXyIafyA6SvyN/OBtfPnjvJmbxNxQjCcyWD198urwm5TYvIUUyAxEAN0K7HJggOgT15cOlWFyLeA==}
 
-  '@vueuse/metadata@12.0.0':
-    resolution: {integrity: sha512-Yzimd1D3sjxTDOlF05HekU5aSGdKjxhuhRFHA7gDWLn57PRbBIh+SF5NmjhJ0WRgF3my7T8LBucyxdFJjIfRJQ==}
+  '@vueuse/metadata@12.4.0':
+    resolution: {integrity: sha512-AhPuHs/qtYrKHUlEoNO6zCXufu8OgbR8S/n2oMw1OQuBQJ3+HOLQ+EpvXs+feOlZMa0p8QVvDWNlmcJJY8rW2g==}
 
-  '@vueuse/shared@12.0.0':
-    resolution: {integrity: sha512-3i6qtcq2PIio5i/vVYidkkcgvmTjCqrf26u+Fd4LhnbBmIT6FN8y6q/GJERp8lfcB9zVEfjdV0Br0443qZuJpw==}
+  '@vueuse/shared@12.4.0':
+    resolution: {integrity: sha512-9yLgbHVIF12OSCojnjTIoZL1+UA10+O4E1aD6Hpfo/DKVm5o3SZIwz6CupqGy3+IcKI8d6Jnl26EQj/YucnW0Q==}
 
   abbrev@2.0.0:
     resolution: {integrity: sha512-6/mh1E2u2YgEsCHdY0Yx5oW+61gZU+1vXaoiHHrpKeuRNNgFvS+/jrwHiQhB5apAf5oB7UB7E19ol2R2LKH8hQ==}
@@ -3771,8 +3791,8 @@ packages:
   vuetify-nuxt-module@0.18.3:
     resolution: {integrity: sha512-Mv5mcqfqk5dR9oVJiITXn5p4NmDzp57AR2Txf/0iIoAjFlMsDWzTpUvn9ELTzDI3Z0LjiYVqptwxrOlMcju2Wg==}
 
-  vuetify@3.7.6:
-    resolution: {integrity: sha512-lol0Va5HtMIqZfjccSD5DLv5v31R/asJXzc6s7ULy51PHr1DjXxWylZejhq0kVpMGW64MiV1FmA/p8eYQfOWfQ==}
+  vuetify@3.7.7:
+    resolution: {integrity: sha512-YqKnRo2+BZWQRzfxHVA/5reQo1eLvbS9Z6N+Lvaot/5lpdi7JWooMr/hWoCr7/QPBGRcXArHppqIB+hMfPlsXw==}
     engines: {node: ^12.20 || >=14.13}
     peerDependencies:
       typescript: '>=4.7'
@@ -4422,12 +4442,14 @@ snapshots:
 
   '@intlify/shared@11.0.0-rc.1': {}
 
+  '@intlify/shared@11.0.1': {}
+
   '@intlify/unplugin-vue-i18n@6.0.1(@vue/compiler-dom@3.5.13)(eslint@9.17.0(jiti@2.4.2))(rollup@4.28.1)(typescript@5.7.2)(vue-i18n@10.0.5(vue@3.5.13(typescript@5.7.2)))(vue@3.5.13(typescript@5.7.2))':
     dependencies:
       '@eslint-community/eslint-utils': 4.4.1(eslint@9.17.0(jiti@2.4.2))
       '@intlify/bundle-utils': 10.0.0(vue-i18n@10.0.5(vue@3.5.13(typescript@5.7.2)))
-      '@intlify/shared': 10.0.5
-      '@intlify/vue-i18n-extensions': 7.0.0(@intlify/shared@10.0.5)(@vue/compiler-dom@3.5.13)(vue-i18n@10.0.5(vue@3.5.13(typescript@5.7.2)))(vue@3.5.13(typescript@5.7.2))
+      '@intlify/shared': 11.0.1
+      '@intlify/vue-i18n-extensions': 7.0.0(@intlify/shared@11.0.1)(@vue/compiler-dom@3.5.13)(vue-i18n@10.0.5(vue@3.5.13(typescript@5.7.2)))(vue@3.5.13(typescript@5.7.2))
       '@rollup/pluginutils': 5.1.4(rollup@4.28.1)
       '@typescript-eslint/scope-manager': 8.18.1
       '@typescript-eslint/typescript-estree': 8.18.1(typescript@5.7.2)
@@ -4451,11 +4473,11 @@ snapshots:
 
   '@intlify/utils@0.13.0': {}
 
-  '@intlify/vue-i18n-extensions@7.0.0(@intlify/shared@10.0.5)(@vue/compiler-dom@3.5.13)(vue-i18n@10.0.5(vue@3.5.13(typescript@5.7.2)))(vue@3.5.13(typescript@5.7.2))':
+  '@intlify/vue-i18n-extensions@7.0.0(@intlify/shared@11.0.1)(@vue/compiler-dom@3.5.13)(vue-i18n@10.0.5(vue@3.5.13(typescript@5.7.2)))(vue@3.5.13(typescript@5.7.2))':
     dependencies:
       '@babel/parser': 7.26.3
     optionalDependencies:
-      '@intlify/shared': 10.0.5
+      '@intlify/shared': 11.0.1
       '@vue/compiler-dom': 3.5.13
       vue: 3.5.13(typescript@5.7.2)
       vue-i18n: 10.0.5(vue@3.5.13(typescript@5.7.2))
@@ -5245,24 +5267,24 @@ snapshots:
 
   '@vue/shared@3.5.13': {}
 
-  '@vuetify/loader-shared@2.0.3(vue@3.5.13(typescript@5.7.2))(vuetify@3.7.6)':
+  '@vuetify/loader-shared@2.0.3(vue@3.5.13(typescript@5.7.2))(vuetify@3.7.7)':
     dependencies:
       upath: 2.0.1
       vue: 3.5.13(typescript@5.7.2)
-      vuetify: 3.7.6(typescript@5.7.2)(vite-plugin-vuetify@2.0.4)(vue@3.5.13(typescript@5.7.2))
+      vuetify: 3.7.7(typescript@5.7.2)(vite-plugin-vuetify@2.0.4)(vue@3.5.13(typescript@5.7.2))
 
-  '@vueuse/core@12.0.0(typescript@5.7.2)':
+  '@vueuse/core@12.4.0(typescript@5.7.2)':
     dependencies:
       '@types/web-bluetooth': 0.0.20
-      '@vueuse/metadata': 12.0.0
-      '@vueuse/shared': 12.0.0(typescript@5.7.2)
+      '@vueuse/metadata': 12.4.0
+      '@vueuse/shared': 12.4.0(typescript@5.7.2)
       vue: 3.5.13(typescript@5.7.2)
     transitivePeerDependencies:
       - typescript
 
-  '@vueuse/metadata@12.0.0': {}
+  '@vueuse/metadata@12.4.0': {}
 
-  '@vueuse/shared@12.0.0(typescript@5.7.2)':
+  '@vueuse/shared@12.4.0(typescript@5.7.2)':
     dependencies:
       vue: 3.5.13(typescript@5.7.2)
     transitivePeerDependencies:
@@ -7920,14 +7942,14 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  vite-plugin-vuetify@2.0.4(vite@5.4.11(@types/node@22.10.2)(terser@5.37.0))(vue@3.5.13(typescript@5.7.2))(vuetify@3.7.6):
+  vite-plugin-vuetify@2.0.4(vite@5.4.11(@types/node@22.10.2)(terser@5.37.0))(vue@3.5.13(typescript@5.7.2))(vuetify@3.7.7):
     dependencies:
-      '@vuetify/loader-shared': 2.0.3(vue@3.5.13(typescript@5.7.2))(vuetify@3.7.6)
+      '@vuetify/loader-shared': 2.0.3(vue@3.5.13(typescript@5.7.2))(vuetify@3.7.7)
       debug: 4.4.0(supports-color@9.4.0)
       upath: 2.0.1
       vite: 5.4.11(@types/node@22.10.2)(terser@5.37.0)
       vue: 3.5.13(typescript@5.7.2)
-      vuetify: 3.7.6(typescript@5.7.2)(vite-plugin-vuetify@2.0.4)(vue@3.5.13(typescript@5.7.2))
+      vuetify: 3.7.7(typescript@5.7.2)(vite-plugin-vuetify@2.0.4)(vue@3.5.13(typescript@5.7.2))
     transitivePeerDependencies:
       - supports-color
 
@@ -8003,8 +8025,8 @@ snapshots:
       ufo: 1.5.4
       unconfig: 0.5.5
       upath: 2.0.1
-      vite-plugin-vuetify: 2.0.4(vite@5.4.11(@types/node@22.10.2)(terser@5.37.0))(vue@3.5.13(typescript@5.7.2))(vuetify@3.7.6)
-      vuetify: 3.7.6(typescript@5.7.2)(vite-plugin-vuetify@2.0.4)(vue@3.5.13(typescript@5.7.2))
+      vite-plugin-vuetify: 2.0.4(vite@5.4.11(@types/node@22.10.2)(terser@5.37.0))(vue@3.5.13(typescript@5.7.2))(vuetify@3.7.7)
+      vuetify: 3.7.7(typescript@5.7.2)(vite-plugin-vuetify@2.0.4)(vue@3.5.13(typescript@5.7.2))
     transitivePeerDependencies:
       - magicast
       - rollup
@@ -8014,12 +8036,12 @@ snapshots:
       - vue
       - webpack-plugin-vuetify
 
-  vuetify@3.7.6(typescript@5.7.2)(vite-plugin-vuetify@2.0.4)(vue@3.5.13(typescript@5.7.2)):
+  vuetify@3.7.7(typescript@5.7.2)(vite-plugin-vuetify@2.0.4)(vue@3.5.13(typescript@5.7.2)):
     dependencies:
       vue: 3.5.13(typescript@5.7.2)
     optionalDependencies:
       typescript: 5.7.2
-      vite-plugin-vuetify: 2.0.4(vite@5.4.11(@types/node@22.10.2)(terser@5.37.0))(vue@3.5.13(typescript@5.7.2))(vuetify@3.7.6)
+      vite-plugin-vuetify: 2.0.4(vite@5.4.11(@types/node@22.10.2)(terser@5.37.0))(vue@3.5.13(typescript@5.7.2))(vuetify@3.7.7)
 
   w3c-xmlserializer@5.0.0:
     dependencies:
