@@ -6,6 +6,7 @@ import { md3 } from 'vuetify/blueprints';
 
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
+<<<<<<< Updated upstream
   runtimeConfig: {
     prometheus: {
       baseUrls: ['https://rec-monprom.agrica.loc', 'https://monprom.agrica.loc'],
@@ -19,7 +20,12 @@ export default defineNuxtConfig({
   typescript: {
     typeCheck: true
   },
+=======
+  devtools: { enabled: true, timeline: { enabled: true}},
+  modules: ['@nuxtjs/i18n', 'vuetify-nuxt-module' ],
+>>>>>>> Stashed changes
   nitro: {
+    preset: 'node-server',
     experimental: {
       openAPI: true,
     }, 

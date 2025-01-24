@@ -1,7 +1,14 @@
 <script setup lang="ts">  
-    import { useCustomTheme } from '~/composables/useCustomTheme';
-    const { isDark:isThemeDark, toggle:toggleTheme } = useCustomTheme();
-    const darkLightIcon = computed(() => (isThemeDark.value ? 'mdi-weather-sunny' : 'mdi-weather-night'));
+    import { useAppTheme } from '~/composables/useAppTheme';
+
+    const route = useRoute();
+    const title = computed(() => {
+    return route.meta?.title || route.matched[0].meta?.title || ''
+    });
+
+    const { isDark, toggleTheme  } = useAppTheme(); 
+    const iconTheme = computed( () => isDark.value ? 'mdi-weather-night' : 'mdi-weather-sunny' );
+
 
     const drawer= ref(false);
     // App Bar order 10 or -1
@@ -10,23 +17,25 @@
 
 
 <template>
-     <v-app :theme="isThemeDark ? 'dark' : 'light'">
+<v-app :theme="isDark ? 'dark' : 'light'">
 
     <v-layout class="rounded rounded-md">
-
-
+ 
   
       <v-app-bar  color="primary"  prominent :order="order">
         <v-app-bar-nav-icon variant="text" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
 
-        <v-app-bar-title>Mon Application Bar</v-app-bar-title>
+        <v-app-bar-title>{{ title }}</v-app-bar-title>
 
         <v-spacer></v-spacer>
 
-        <v-btn variant="text" icon="mdi-magnify"></v-btn>
-        <v-btn variant="text" icon="mdi-filter"></v-btn>
-        <v-btn variant="text" :icon="darkLightIcon" @click="toggleTheme()" />
+        <slot name="iconBar">
+            <v-btn variant="text" icon="mdi-magnify"></v-btn>
+        </slot> 
+        
+        <v-btn variant="text" :icon="iconTheme"  @click="toggleTheme()"   />
         <v-btn variant="text" icon="mdi-dots-vertical" id="menu-dots-vertical-activator"></v-btn>
+
         <v-menu activator="#menu-dots-vertical-activator">
             <v-list>
                 <v-list-item  prepend-icon="mdi-logout" >
