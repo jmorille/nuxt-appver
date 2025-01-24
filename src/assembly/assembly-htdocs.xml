@@ -13,8 +13,8 @@
     <fileSets>
         <!-- Service NodeJS -->
         <fileSet>
-            <directory>${project.build.directory}/dist</directory>
-            <outputDirectory>.</outputDirectory>
+            <directory>${nodeapp.build}/dist</directory>
+            <outputDirectory>htdocs/bin</outputDirectory>
             <fileMode>0555</fileMode>
             <directoryMode>0755</directoryMode>
             <excludes>

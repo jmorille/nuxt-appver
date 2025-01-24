@@ -29,6 +29,10 @@ Build the application for production:
 pnpm build
 ```
 
+magic happen
+* http://localhost:3000/_swagger 
+* http://localhost:3000/_openapi.json
+
 Locally preview production build:
 
 ```bash

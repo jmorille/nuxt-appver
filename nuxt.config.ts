@@ -6,9 +6,19 @@ import { md3 } from 'vuetify/blueprints';
 
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
+  runtimeConfig: {
+    prometheus: {
+      baseUrls: ['https://rec-monprom.agrica.loc', 'https://monprom.agrica.loc'],
+      username: "t_int_cont",
+      password: "In5tC0nt",
+    }
+  },
   buildDir: 'target/.nuxt',
   devtools: { enabled: true },
-  modules: ['@nuxtjs/i18n', 'vuetify-nuxt-module' ],
+  modules: ['@nuxtjs/i18n', 'vuetify-nuxt-module'],
+  typescript: {
+    typeCheck: true
+  },
   nitro: {
     experimental: {
       openAPI: true,
