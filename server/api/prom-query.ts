@@ -12,7 +12,8 @@ defineRouteMeta({
             in: "query", name: "query", required: true,
             description: "Prometheus Complexe Query:  \n Syntaxe like: app_version_info{'env'='integ','zone'='lan', artifactid=~'bff.*'} \n",
             example: "app_version_info{'zone'='lan'}"
-        }]
+        }],
+        tags: [ 'Prometheus'], 
     },
 });
 
