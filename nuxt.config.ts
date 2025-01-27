@@ -12,12 +12,21 @@ export default defineNuxtConfig({
       password: "prom_password",
     }
   },
+
   buildDir: 'target/.nuxt',
   devtools: { enabled: true, timeline: { enabled: true} },
   modules: ['@nuxtjs/i18n', 'vuetify-nuxt-module'],
+
   typescript: {
     typeCheck: true
-  }, 
+  },
+  $development: {
+    vite: {
+      server: {
+        allowedHosts: true,
+      },
+    },
+  },
   nitro: {
     preset: 'node-server',
     experimental: {
@@ -31,6 +40,7 @@ export default defineNuxtConfig({
       }
     }
   },
+
   i18n: {
     locales: [{
       code: 'en-US',
@@ -56,6 +66,7 @@ export default defineNuxtConfig({
     // Vue configuration file, you can move it to the root folder
     vueI18n: './i18n.config.ts'
   },
+
   vuetify: {
     moduleOptions: {
       /* module specific options */
@@ -70,5 +81,7 @@ export default defineNuxtConfig({
         sets: [ 'mdi', 'fa' ]
       }
     }
-  }
+  },
+
+  compatibilityDate: '2025-01-24'
 })

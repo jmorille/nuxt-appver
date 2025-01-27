@@ -8,7 +8,6 @@ defineRouteMeta({
         description: 'Hello World',
         parameters: [{ in: "query", name: "name", required: true }],
         tags: [ 'Hello'],
-    
     },
 });
 
